@@ -3,8 +3,6 @@
 import os
 from send2trash import send2trash
 
-onedrive_path = "E:\\OneDrive\\Camera Uploads\\Camera Roll" # Change this to your onedrive path
-
 class RepeatDelete():
     def files_in_dir(self, path):
         '''
@@ -15,13 +13,21 @@ class RepeatDelete():
 
     def run(self):
         while True:
+            onedrive_path = input("What is the path of your OneDrive contents?")
+            if os.path.isdir(onedrive_path) == True:
+                break
+            else:
+                print("Pleasea put in the correct directory."
+                continue
+                      
+        while True:
             photo_path = input("What is the path of your photo folder?")
             if os.path.isdir(photo_path) == True:
                 break
             else: 
                 print("Please put in the correct directory.")
                 continue
-
+        
         files_in_comp, files_in_onedrive, i = self.files_in_dir(photo_path), self.files_in_dir(onedrive_path), 0
 
         for file in files_in_comp:
